@@ -1,0 +1,114 @@
+body {
+    background-color: rgb(190, 190, 190);
+    background-image: url(../img/abhi3);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-blend-mode: soft-light;
+   
+    
+}
+
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.notic {
+    text-align: center;
+    font-size: 30px;
+}
+
+.container1 {
+    background-color: white;
+    display: inline-block;
+    margin-left: 250px;
+    width: 30%;
+
+    border-radius: 20px;
+}
+
+.container2 {
+    background-color: white;
+    display: inline-block;
+    margin-left: 20px;
+    width: 30%;
+    border-radius: 20px;
+
+    height: 130px;
+}
+
+.container3 {
+    background-color: white;
+    display: inline-block;
+    width: 60%;
+    margin-left: 70px;
+
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-left: 260px;
+}
+
+button {
+    background-color: cornflowerblue;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 150px;
+}
+
+i {
+    margin-left: 190px;
+
+
+}
+
+p {
+    margin-left: 140px;
+}
+
+h4 {
+    margin-left: 135px;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+.abhi {
+    margin-left: 100px;
+}
+
+h1 {
+    margin-top: 80px;
+    text-decoration: underline;
+    color: red;
+    margin-top: -5px;
+}
+
+.para {
+    text-align: center;
+    font-weight: 600;
+    margin-left: -30px;
+}
+
+input[type=text] {
+    display: inline-block;
+    padding: 10px;
+}
+
+.btn1 {
+    margin-left: 400px;
+}
+.btn1:hover{
+    background-color: lightskyblue;
+}
+
+pre {
+    margin-left: 80px;
+    margin-top: 40px;
+}
+.sale:hover{
+  background-color: lightskyblue;
+}

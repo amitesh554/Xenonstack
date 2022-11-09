@@ -1,0 +1,72 @@
+body {
+    background: #b7f8db;
+}
+
+form {
+    border: 3px solid #f1f1f1;
+    width: 30%;
+    height: 70%;
+    margin: auto;
+    background-color: rgb(198, 240, 240);
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+
+input[type=text] {
+    width: 80%;
+    padding: 10px;
+    margin: 5px 0 22px 0;
+    display: block;
+    border: none;
+    background-color: white;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+
+label {
+    margin-left: 20px;
+}
+
+
+
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+
+.cancelbtn {
+    background-color: rgb(240, 58, 58);
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    width: 30%;
+    margin-left: 80px;
+}
+
+.submitbtn {
+    background-color: rgb(132, 240, 132);
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    width: 30%;
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+p {
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+    color: lightseagreen;
+}
+img{
+    width: 5%;
+    margin-left: 670px;
+    border-radius: 30px;
+
+}

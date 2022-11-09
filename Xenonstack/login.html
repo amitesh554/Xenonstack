@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="./CSS/login.css">
+</head>
+
+<body>
+    <h1>Sign Up</h1>
+    <img src="avtar.png" alt="">
+    <form action="" id="contactForm">
+        <div class="container">
+            <p> Login account</p>
+            <hr>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email"  id="email">
+
+            <label for="psw"><b>Password</b></label>
+            <input type="text" placeholder="Enter Password" id="password">
+
+             <label>
+                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+            </label>
+
+            
+
+            <div class="btn">
+                <a href="login.html"><button type="button" class="cancelbtn">Cancel</button></a>
+                <button type="submit" id="submit" class="submitbtn">Login</button>
+            </div>
+        </div>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
+      import { EmailAuthCredential, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js'
+  
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyB_wiCeLttqVHTKRUmjVeLdz0hro9NXEkc",
+        authDomain: "contact-detail-67080.firebaseapp.com",
+        databaseURL: "https://contact-detail-67080-default-rtdb.firebaseio.com",
+        projectId: "contact-detail-67080",
+        storageBucket: "contact-detail-67080.appspot.com",
+        messagingSenderId: "915120796809",
+        appId: "1:915120796809:web:dd2a8a702cf3589e4b4258",
+        measurementId: "G-2N11PH4Y66"
+      };
+      
+      firebase.initializeApp(firebaseConfig);
+      document.getElementById('submit').addEventListener("click", function(event) {
+        event.preventDefault()
+        var email = getElementval("email")
+        var password = getElementval("password")
+        localStorage.setItem("email", email)
+        localStorage.setItem("password", password)
+        console.log(email, password)
+        firebase.auth().signInWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+                alert("User login with: " + userCredential.user.uid)
+                window.location = "home.html"
+            })
+            .catch((error) => {
+                alert(error.message)
+            });
+      })
+  
+      const getElementval = (id) =>{
+          return document.getElementById(id).value;
+      };
+  
+    </script>
+</body>
+
+</html>

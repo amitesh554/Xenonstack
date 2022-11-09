@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Abhishek</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./CSS/home.css">
+
+</head>
+
+<body>
+    <div class="conatiner2" style="padding: -50px;">
+        
+        <ul>
+            <a href="home.html"><li>Home Page</li></a>
+            
+            <a href="contact us.html"><li>Conatct-Us</li></a>
+           
+            <a href="register.html"><li>Register</li></a>
+            <a href="login.html"><li>Login</li></a>
+        </ul>
+      
+        <h2 id="username"></h2>
+        
+    </div>
+    <section id="home">
+        <h1 class="h-primary">Welcome to MyOnlineMeal</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis dolorum numquam minus. </p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. </p>
+        <button class="btn">Order Now</button>
+    </section>
+    <section id="services-container">
+        <h1 class="h-primary center">Our Services</h1>
+        <div id="services">
+            <div class="box">
+                <img src="img/1.png" alt="">
+                <h2 class="h-secondary center">Food Catering</h2>
+                <p class="center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, culpa suscipit error
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et qui, repudiandae similique nam, recusandae quidem ab asperiores ex, aut fugit labore veritatis facere?
+                    sint delectus ab dolorum nam. Debitis facere, incidunt voluptates eos, mollitia voluptatem iste sunt
+                    voluptas beatae facilis labore, omnis sint quae eum.</p>
+            </div>
+            <div class="box">
+                <img src="2.png" alt="">
+                <h2 class="h-secondary center">Bulk Ordering</h2>
+                <p class="center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, culpa suscipit error
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde laudantium a incidunt animi ad, ab dignissimos vero? Unde numquam odit repudiandae perferendis nisi.
+
+                    sint delectus ab dolorum nam. Debitis facere, incidunt voluptates eos, mollitia voluptatem iste sunt
+                    voluptas beatae facilis labore, omnis sint quae eum.</p>
+            </div>
+            <div class="box">
+                <img src="3.png" alt="">
+                <h2 class="h-secondary center">Food Ordering</h2>
+                <p class="center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, culpa suscipit error
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus provident fugiat aliquam minima at explicabo. Earum eveniet quaerat, sunt molestias nesciunt quas! Quis.
+                    sint delectus ab dolorum nam. Debitis facere, incidunt voluptates eos, mollitia voluptatem iste sunt
+                    voluptas beatae facilis labore, omnis sint quae eum.</p>
+            </div>
+        </div>
+    </section>
+    <section id="client-section">
+        <h1 class="h-primary center">Our Clients</h1>
+        <div id="clients">
+            <div class="client-item">
+                <img src="logo1.png" alt="Our Client">
+            </div>
+            <div class="client-item">
+                <img src="logo2.png" alt="Our Client">
+            </div>
+          
+            <div class="client-item">
+                <img src="logo4.png" alt="Our Client">
+            </div>
+            <div class="client-item">
+                <img src="logo3.png" alt="Our Client">
+            </div>
+        </div>
+
+    </section>
+   
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
+    import { EmailAuthCredential, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js'
+    import { Firestore } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js'
+
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyB_wiCeLttqVHTKRUmjVeLdz0hro9NXEkc",
+        authDomain: "contact-detail-67080.firebaseapp.com",
+        databaseURL: "https://contact-detail-67080-default-rtdb.firebaseio.com",
+        projectId: "contact-detail-67080",
+        storageBucket: "contact-detail-67080.appspot.com",
+        messagingSenderId: "915120796809",
+        appId: "1:915120796809:web:dd2a8a702cf3589e4b4258",
+        measurementId: "G-2N11PH4Y66"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    var email = localStorage.getItem("email")
+    var password = localStorage.getItem("password")
+
+    console.log(email, password)
+    firebase.auth().signInWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+                firebase.firestore().collection("users").doc(userCredential.user.uid).get()
+                    .then((querySnapshot) => {
+                        var data = querySnapshot.data()
+                        document.getElementById("username").textContent = data.firstName + " " + data.lastName
+                    })
+                        .catch((e) => {
+                                alert(e.message)
+                            })
+    })   
+
+    const getElementval = (id) => {
+        return document.getElementById(id).value;
+    };
+
+</script>
+
+</html>

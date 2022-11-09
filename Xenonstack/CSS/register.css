@@ -1,0 +1,70 @@
+
+h1{
+    text-align: center;
+    text-decoration: underline;
+}
+p{
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+    color: lightseagreen;
+}
+body {
+    background: #b7f8db;
+    background-image: url(../bg.jpg);
+    background-position:center;
+    background-size: cover;
+    background-attachment: fixed;
+   
+}
+
+form {
+    border: 3px solid #f1f1f1;
+    width: 50%;
+    height: 100%;
+    margin: auto;
+    background-color: rgb(198, 240, 240);
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+input[type=text] {
+    width: 90%;
+    padding: 10px;
+    margin: 5px 0 22px 0;
+    display: block;
+    border: none;
+    background-color: white;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+input[type=checkbox]{
+    margin-left: 20px;
+}
+.name{
+  font-weight: 600;
+}
+label{
+    margin-left: 20px;
+}
+.cancelbtn{
+    background-color: rgb(240, 58, 58);
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    width: 30%;
+    margin-left: 120px;
+}
+.submitbtn{
+    background-color: rgb(132, 240, 132);
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    width: 30%;
+}
+img{
+    width: 5%;
+    margin-left: 670px;
+    border-radius: 30px;
+
+}
